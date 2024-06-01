@@ -1,12 +1,19 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import uuid from 'react-uuid';
 import './App.css';
 import Sidebar from './Sidebar';
 import Main from './Main';
 
 function App() {
-  const [notes, setNotes] = useState([]);
-  const [activeNote, setActiveNote] = useState(false);	
+  const [notes, setNotes] = useState(
+    localStorage.notes ? JSON.parse(localStorage.notes) : []
+  );
+  const [activeNote, setActiveNote] = useState(false);
+
+  useEffect(() => {
+    localStorage.setItem("notes", JSON.stringify(notes));
+  }, [notes]);
+  
   const colorList = [
     { color: '#FFFFFF', name: 'White' },
     { color: '#F28B82', name: 'Red' },
