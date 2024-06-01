@@ -14,7 +14,7 @@ function Sidebar({notes, addNote, deleteNote, activeNote, setActiveNote}){
                   onClick={() => setActiveNote(note.id)}>
               <div className="sidebar-note-title">
                   <strong>{note.title}</strong>
-                  <button onClick={() => deleteNote(note.id)}>Delete</button>
+                  <button onClick={() => deleteNote(note.id)} className="delete-button">Delete</button>
               </div>
 
           <p>{note.body && note.body.length > 100 ? note.body.substr(0,100) + '...' : note.body}</p>
