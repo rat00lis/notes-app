@@ -14,7 +14,18 @@
 
 /* GLOBAL STYLES */
 
-
+.select-color{
+  color: white;
+  text-align: center;
+  z-index: 1;
+  margin-left: 20px;
+}
+.app-main-note-edit input.color-picker{
+  all: unset;
+  width: 200px;
+  height: 30px;
+  position: absolute;
+}
 
 body,
 .App {
@@ -110,7 +121,7 @@ button.delete-button:hover{
 }
 .app-main-note-edit,
 .app-main-note-preview {
-  height: 50vh;
+  height: 55vh;
 }
 
 .no-active-note {

@@ -10,14 +10,17 @@ function Sidebar({notes, addNote, deleteNote, activeNote, setActiveNote}){
         {
           sortedNotes.map((note) => {
             return (
-            <div  className = {`app-sidebar-note ${note.id === activeNote && 'active'}`}
-                  onClick={() => setActiveNote(note.id)}>
+            <div  
+              className={`app-sidebar-note ${note.id === activeNote && 'active'}`}
+              onClick={() => setActiveNote(note.id)}
+              style={{ backgroundColor: note.id !== activeNote ? note.color : '' }}
+            >
               <div className="sidebar-note-title">
                   <strong>{note.title}</strong>
                   <button onClick={() => deleteNote(note.id)} className="delete-button">Delete</button>
               </div>
 
-          <p>{note.body && note.body.length > 100 ? note.body.substr(0,100) + '...' : note.body}</p>
+              <p>{note.body && note.body.length > 100 ? note.body.substr(0,100) + '...' : note.body}</p>
 
               <small className="note-meta">
                   {new Date(note.lastModified).toLocaleDateString('en-GB', {
@@ -25,9 +28,7 @@ function Sidebar({notes, addNote, deleteNote, activeNote, setActiveNote}){
                       minute: '2-digit'
                   })}
               </small>
-          </div>
-            )
-          })
+          </div>)})
         }
         </div>
     </div>

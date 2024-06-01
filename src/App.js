@@ -7,6 +7,18 @@ import Main from './Main';
 function App() {
   const [notes, setNotes] = useState([]);
   const [activeNote, setActiveNote] = useState(false);	
+  const colorList = [
+    { color: '#FFFFFF', name: 'White' },
+    { color: '#F28B82', name: 'Red' },
+    { color: '#FBCB8B', name: 'Orange' },
+    { color: '#FFF475', name: 'Yellow' },
+    { color: '#CCFF90', name: 'Light Green' },
+    { color: '#A7FFEB', name: 'Turquoise' },
+    { color: '#CBF0F8', name: 'Light Blue' },
+    { color: '#AECBFA', name: 'Blue' },
+    { color: '#D7AEFB', name: 'Purple' },
+    { color: '#FDCFE8', name: 'Pink' },
+  ];  
 
   const addNote = () => {
     //add a new note to the notes array
@@ -50,6 +62,7 @@ function App() {
       <Main 
       activeNote={getActiveNote()}
       updateNote={updateNote}
+      colorList={colorList}
       />
     </div>
   );
